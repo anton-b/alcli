@@ -1,15 +1,16 @@
 language: python
 python:
-  - 3.8
-  - 3.7
+- 3.8
+- 3.7
 install: pip install -U tox-travis
 script: tox
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
-  user: alertlogic
+  server: https://test.pypi.org/legacy/
+  user: __token__
   password:
-    secure: 1Y4wOV54F50M1X/6HQnSKf6sAVptK0vurXF2psQh/PwyqQy97jyVJmZvrEPeRJwjTx2zKO7+rvyKC8l/dJkI58l6XYlz/aFZwL4RXICNdcLQiEKcxd6rXfhB9wZZ+kr1CsX/cJYRgTJMGnVIx3wDo3FV3zHykDUS4WZTcbw1VlDT5ji4fcjbKtlKhyd3eRp3CnGdiDJ8d40Qw14gb8ys++PDJR+DPPNlTS3EFM2y9x/+UTCBg1GzckK+9NZXfLxkYJkSv514lFxjEzGbPY2V02z69yyH2zz/lOYh7hCRWSC2PrhIu/Q6K5w+7u8GZTR+ZBpjQuMhrtGmtFYHIkKNMvEIgRmnDVlR4SaThXpCBfbLBeceC2wT1RFegmUj8g4Wrq/kINBvY18sKtd/93Bgl6kdUxJiSHBMLtYifGeEn8eogkyys90E5a3U8FWHVhq4+6Q5IE9+idjzVS28sv+16V8M1XMmxvDhxBFbOP+XBKYJQyX9MEM2hnWlN7Q7QyFGdBpXdwkDl/DBTzN5JBRsyEivSWA485VCXoIhOlQ4ogpamekEDSw4SyOaAmsSb8o+i0ooc6TU8hmHb/kxX3uhovHJZnKUdG/cd1eecy3MTYVpvRCnaIRlcPIEKfc5TI/RBg7lNO9H4G5hmjJhYFBTEYOKLmlQoJSpUv3xHF0xRTwo=
+    secure: pTyRyNnejg9+xr32IC7GEMVSQRfLQbzP5Eqa7IvWtMcrAvr1/jW6b3cj+z5fCkjrI8XjQ/Io9NXo5ZjKhl5UcrmXG3SLIpBEDlYMEcF9YXEB1Sm3keuQVPRsIgyC/gQhalSQw8gryQB3RSxTzwaWsM9D6a1hW5QlCvaD7SMnBVv8gIvqLAhv08VDIWWoe87xOLESucNN4RQZzXQFSnT8Sbe1V6FyC1puHL5bdt4MMn/8SzlISyA3M4RaxeHNWzV6HqzDqP6gAvr0x6CMyhkgxrpdl6Ak2Jl8naRk1VLx+zP7mksV3crFwoENgsX6wm4Z4y1qHkC14qkhrl1Xnjvoz5jvTwEqQe/iowLA6IfYRYkk3Z8QiVRtZ2iXdGFAh1ZbxY6iaw8NbXOmG7Q3BmwHAlNFhBBOR8N0sGTpO2GGKnmen44iRKILYddFgITfJlmUyQSzS7CmC5h5Co965FiiuujwefHUhEsDNWsTlUwoXhykUyCCOoGO8vOJAYJilCcPGCx/mZRcleXYbZy0HpMvm+b64+Rj7l47slbY07bCQptkxKwGOkWW+I/eLWngKkZaVOcVMySF9IG+KcAXzB/H+Fquce/FncjLXzV5HEfyTu0U5JXeyI5RXObycFVHbCEKDddUHzoi3NdOtHC6G16Ou7uC/691hbCdCW0EQ5wgv8U=
   on:
     tags: true
     repo: anton-b/alcli

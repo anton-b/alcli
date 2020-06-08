@@ -16,13 +16,6 @@ if sys.platform == 'win32':
 else:
     executables = []
 
-
-_version_re = re.compile(r'__version__\s+=\s+(.*)')
-
-with open('alcli/__init__.py', 'rb') as f:
-    version = str(ast.literal_eval(_version_re.search(
-        f.read().decode('utf-8')).group(1)))
-
 with open('README.md') as readme_file:
     readme = readme_file.read()
 
@@ -38,7 +31,8 @@ requirements = [
     ]
 setup(
     name='alcli',
-    version=version,
+    use_scm_version=True,
+    setup_requires=['setuptools_scm'],
     url='https://github.com/alertlogic/alcli',
     license='MIT license',
     author='Alert Logic Inc.',
